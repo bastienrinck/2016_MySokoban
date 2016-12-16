@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 09:00:07 2016 Bastien
-** Last update Fri Dec 16 01:14:08 2016 Bastien
+** Last update Fri Dec 16 17:01:42 2016 Bastien
 */
 
 typedef struct	s_tab
@@ -57,3 +57,4 @@ void	check_box(t_tab *, t_player *, int);
 int	check_around(char **, int, int);
 void	display(t_tab *, char **, t_winfo);
 void	usage();
+void	isamap(char);

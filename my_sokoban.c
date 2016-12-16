@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Mon Dec 12 10:10:22 2016 Bastien
-** Last update Fri Dec 16 00:46:24 2016 Bastien
+** Last update Fri Dec 16 17:14:18 2016 Bastien
 */
 
 #include <stdio.h>
@@ -13,6 +13,9 @@
 #include <curses.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include "sokoban.h"
 
 void	find_player(char **tmap, t_player *player)
@@ -81,11 +84,18 @@ int		main(int ac, char **av)
   t_tab		*tmap;
   int		result;
   t_player	*player;
+  int		fd;
+  char		c;
 
+  c = '0';
   if (ac != 2)
     return (84);
   if (av[1][0] == '-' && av[1][1] == 'h' && av[1][2] == '\0')
     usage();
+  if ((fd = open(av[1], O_RDONLY)) == -1)
+    return (84);
+  while (read(fd, &c, 1) != 0)
+    isamap(c);
   if ((player = malloc(sizeof(t_player))) == NULL)
     return (84);
   tmap = str_to_t_tab(av[1]);

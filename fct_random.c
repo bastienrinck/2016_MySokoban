@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Thu Dec 15 23:03:32 2016 Bastien
-** Last update Fri Dec 16 01:13:05 2016 Bastien
+** Last update Fri Dec 16 17:15:58 2016 Bastien
 */
 
 #include <stdlib.h>
@@ -72,4 +72,11 @@ void	display(t_tab *tmap, char **tab, t_winfo winfo)
       mvprintw(y, winfo.x, "%s", tab[i]);
       y++;
     }
+}
+
+void	isamap(char c)
+{
+  if (c != 'X' && c != 'O' && c != '#' && c != ' ' &&
+      c != 'P' && c != '\0' && c != '\n')
+    exit(84);
 }
