@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 23:09:20 2016 Bastien
-** Last update Sat Dec 17 23:45:32 2016 Bastien
+** Last update Sat Dec 17 18:23:04 2016 Bastien
 */
 
 #include <stdio.h>
@@ -91,5 +91,5 @@ void	check_arg(t_tab *tmap, t_player *player)
 {
   check_ascii(tmap, player);
   check_nbelem(tmap, player);
-  //check_box(tmap, player, 0);
+  check_box(tmap, player, 0);
 }
