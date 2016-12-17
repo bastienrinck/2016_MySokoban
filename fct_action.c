@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 13:51:25 2016 Bastien
-** Last update Sat Dec 17 18:22:26 2016 Bastien
+** Last update Sat Dec 17 23:45:58 2016 Bastien
 */
 
 #include <curses.h>
@@ -44,7 +44,7 @@ void	victory(t_tab *tmap, t_player *player)
 int	check_status(t_tab *tmap, t_player *player)
 {
   victory(tmap, player);
-  check_box(tmap, player, 1);
+  //check_box(tmap, player, 1);
   return (0);
 }
 
