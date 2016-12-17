@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 13:51:25 2016 Bastien
-** Last update Thu Dec 15 23:05:19 2016 Bastien
+** Last update Sat Dec 17 18:22:26 2016 Bastien
 */
 
 #include <curses.h>
@@ -18,7 +18,7 @@ void	defeat(t_tab *tmap, t_player *player)
       free_t_tab(tmap);
       clear();
       endwin();
-      exit(0);
+      exit(1);
 }
 
 void	victory(t_tab *tmap, t_player *player)
@@ -38,7 +38,7 @@ void	victory(t_tab *tmap, t_player *player)
   free(player);
   clear();
   endwin();
-  exit(1);
+  exit(0);
 }
 
 int	check_status(t_tab *tmap, t_player *player)

@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 23:09:20 2016 Bastien
-** Last update Fri Dec 16 16:58:30 2016 Bastien
+** Last update Sat Dec 17 18:23:04 2016 Bastien
 */
 
 #include <stdio.h>
@@ -89,30 +89,7 @@ void	check_ascii(t_tab *tmap, t_player *player)
 
 void	check_arg(t_tab *tmap, t_player *player)
 {
-  /* check_border(tmap, player); */
   check_ascii(tmap, player);
   check_nbelem(tmap, player);
   check_box(tmap, player, 0);
 }
-
-/* void	check_border(t_tab *tmap, t_player *player) */
-/* { */
-/*   int	i; */
-/*   int	j; */
-/*   int	k; */
-
-/*   i = -1; */
-/*   k = -1; */
-/*   j = 0; */
-/*   while (tmap->tmap[0][++i] != '\0') */
-/*     j = (tmap->tmap[0][i] != '#') ? 1 : j; */
-/*   i = -1; */
-/*   while (tmap->tmap[++i] != NULL) */
-/*     j = (tmap->tmap[i][0] != '#' || */
-/* 	 tmap->tmap[i][my_strlen(tmap->tmap[i])] != '#') ? 1 : j; */
-/*   i -= 1; */
-/*   while (tmap->tmap[i][++k] != '\0') */
-/*     j = (tmap->tmap[i][k] != '#') ? 1 : j; */
-/*   if (j != 0) */
-/*     free_and_err(tmap, player); */
-/* } */
