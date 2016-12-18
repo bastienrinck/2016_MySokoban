@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Thu Dec 15 23:03:32 2016 Bastien
-** Last update Fri Dec 16 17:15:58 2016 Bastien
+** Last update Sun Dec 18 12:04:12 2016 Bastien
 */
 
 #include <stdlib.h>
@@ -62,7 +62,7 @@ void	display(t_tab *tmap, char **tab, t_winfo winfo)
   if (tmap->width > winfo.x * 2 + tmap->width / 2 ||
       tmap->height > winfo.y * 2 + tmap->height / 2)
     {
-      mvprintw(winfo.y, winfo.x, "%s", "Enlarge the terminal");
+      mvprintw(LINES/2, COLS/2 - 10, "%s", "Enlarge the terminal");
       return ;
     }
   y = winfo.y;

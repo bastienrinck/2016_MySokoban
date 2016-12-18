@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Thu Dec 15 13:24:12 2016 Bastien
-** Last update Thu Dec 15 23:47:33 2016 Bastien
+** Last update Sun Dec 18 12:09:54 2016 Bastien
 */
 
 #include <stdlib.h>
@@ -14,7 +14,7 @@
 
 void	free_t_tab(t_tab *tab)
 {
-  int   i;
+  int	i;
 
   i = -1;
   while (tab->tmap[++i] != NULL)

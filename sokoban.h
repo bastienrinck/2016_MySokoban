@@ -5,8 +5,11 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 09:00:07 2016 Bastien
-** Last update Fri Dec 16 17:01:42 2016 Bastien
+** Last update Sun Dec 18 12:22:36 2016 Bastien
 */
+
+#ifndef MY_SOKOBAN_H_
+# define MY_SOKOBAN_H_
 
 typedef struct	s_tab
 {
@@ -58,3 +61,5 @@ int	check_around(char **, int, int);
 void	display(t_tab *, char **, t_winfo);
 void	usage();
 void	isamap(char);
+
+#endif /* !MY_SOKOBAN_H_ */

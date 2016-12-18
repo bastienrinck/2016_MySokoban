@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 23:09:20 2016 Bastien
-** Last update Sat Dec 17 18:23:04 2016 Bastien
+** Last update Sun Dec 18 12:09:21 2016 Bastien
 */
 
 #include <stdio.h>
@@ -38,14 +38,14 @@ int	check_around(char **tab, int y, int x)
   int	i;
 
   i = 0;
-  i = ((tab[y-1][x] == 'X' || tab[y-1][x] == '#') &&
-       (tab[y][x+1] == 'X' || tab[y][x+1] == '#')) ? 1 : i;
-  i = ((tab[y][x+1] == 'X' || tab[y][x+1] == '#') &&
-       (tab[y+1][x] == 'X' || tab[y+1][x] == '#')) ? 1 : i;
-  i = ((tab[y+1][x] == 'X' || tab[y+1][x] == '#') &&
-       (tab[y][x-1] == 'X' || tab[y][x-1] == '#')) ? 1 : i;
-  i = ((tab[y][x-1] == 'X' || tab[y][x-1] == '#') &&
-       (tab[y-1][x] == 'X' || tab[y-1][x] == '#')) ? 1 : i;
+  i = ((tab[y - 1][x] == 'X' || tab[y - 1][x] == '#') &&
+       (tab[y][x + 1] == 'X' || tab[y][x + 1] == '#')) ? 1 : i;
+  i = ((tab[y][x + 1] == 'X' || tab[y][x + 1] == '#') &&
+       (tab[y + 1][x] == 'X' || tab[y + 1][x] == '#')) ? 1 : i;
+  i = ((tab[y + 1][x] == 'X' || tab[y + 1][x] == '#') &&
+       (tab[y][x - 1] == 'X' || tab[y][x - 1] == '#')) ? 1 : i;
+  i = ((tab[y][x - 1] == 'X' || tab[y][x - 1] == '#') &&
+       (tab[y - 1][x] == 'X' || tab[y - 1][x] == '#')) ? 1 : i;
   return (i);
 }
 
