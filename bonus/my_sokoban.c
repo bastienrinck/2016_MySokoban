@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Mon Dec 12 10:10:22 2016 Bastien
-** Last update Mon Dec 19 15:31:23 2016 Bastien
+** Last update Mon Dec 19 18:28:46 2016 Bastien
 */
 
 #include <stdio.h>
@@ -86,7 +86,6 @@ void		sokoban(t_tab *tmap, t_player *player, t_game *ginfo)
 int		main(int ac, char **av)
 {
   t_tab		*tmap;
-  int		result;
   t_player	*player;
   int		fd;
   char		c;

@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Thu Dec 15 23:03:32 2016 Bastien
-** Last update Mon Dec 19 15:01:03 2016 Bastien
+** Last update Mon Dec 19 16:43:58 2016 Bastien
 */
 
 #include <stdlib.h>
@@ -75,7 +75,7 @@ void	display(t_tab *tmap, char **tab, t_winfo winfo, t_game *ginfo)
       y++;
     }
   time(&timing);
-  mvprintw(0, 0, "move : %i\tpushs : %i\ttime : %d",
+  mvprintw(y + 1, winfo.x, "move : %i  pushs : %i  time : %d",
 	   ginfo->move, ginfo->push, timing - ginfo->time);
 }
 

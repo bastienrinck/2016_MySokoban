@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 09:00:07 2016 Bastien
-** Last update Mon Dec 19 14:56:54 2016 Bastien
+** Last update Mon Dec 19 18:21:12 2016 Bastien
 */
 
 #ifndef MY_SOKOBAN_H_
@@ -68,5 +68,7 @@ int	check_around(char **, int, int);
 void	usage();
 void	isamap(char);
 void	init_ginfo(t_game *);
+void	check_border(t_tab *, t_player *, int, int);
+void	check_player(t_tab *, t_player *);
 
 #endif /* !MY_SOKOBAN_H_ */

@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 23:09:20 2016 Bastien
-** Last update Mon Dec 19 12:49:58 2016 Bastien
+** Last update Mon Dec 19 18:17:40 2016 Bastien
 */
 
 #include <stdio.h>
@@ -17,36 +17,26 @@ void	check_nbelem(t_tab *tmap, t_player *player)
   int	elem;
   int	i;
   int	j;
+  int	box;
+  int	hole;
 
   i = -1;
   elem = 0;
+  box = 0;
+  hole = 0;
   while (tmap->tmap[++i] != NULL)
     {
       j = -1;
       while (tmap->tmap[i][++j] != '\0')
 	{
+	  box = (tmap->tmap[i][j] == 'X') ? box + 1 : box;
+	  hole = (tmap->tmap[i][j] == 'O') ? hole + 1 : hole;
 	  elem = (tmap->tmap[i][j] == 'O') ? elem + 1 : elem;
 	  elem = (tmap->tmap[i][j] == 'X') ? elem - 1 : elem;
 	}
     }
-  if (elem != 0)
+  if (elem != 0 || box == 0 || hole == 0)
     free_and_err(tmap, player);
-}
-
-int	check_around(char **tab, int y, int x)
-{
-  int	i;
-
-  i = 0;
-  i = ((tab[y - 1][x] == 'X' || tab[y - 1][x] == '#') &&
-       (tab[y][x + 1] == 'X' || tab[y][x + 1] == '#')) ? 1 : i;
-  i = ((tab[y][x + 1] == 'X' || tab[y][x + 1] == '#') &&
-       (tab[y + 1][x] == 'X' || tab[y + 1][x] == '#')) ? 1 : i;
-  i = ((tab[y + 1][x] == 'X' || tab[y + 1][x] == '#') &&
-       (tab[y][x - 1] == 'X' || tab[y][x - 1] == '#')) ? 1 : i;
-  i = ((tab[y][x - 1] == 'X' || tab[y][x - 1] == '#') &&
-       (tab[y - 1][x] == 'X' || tab[y - 1][x] == '#')) ? 1 : i;
-  return (i);
 }
 
 void	check_ascii(t_tab *tmap, t_player *player)
@@ -69,5 +59,8 @@ void	check_ascii(t_tab *tmap, t_player *player)
 void	check_arg(t_tab *tmap, t_player *player)
 {
   check_ascii(tmap, player);
+  check_border(tmap, player, player->y, player->x);
+  my_reset(tmap->tmap, tmap->save, player);
+  check_player(tmap, player);
   check_nbelem(tmap, player);
 }

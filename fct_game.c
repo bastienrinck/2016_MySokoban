@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Mon Dec 19 13:35:01 2016 Bastien
-** Last update Mon Dec 19 18:21:21 2016 Bastien
+** Last update Mon Dec 19 18:20:52 2016 Bastien
 */
 
 #include <time.h>
@@ -24,13 +24,6 @@ void	check_border(t_tab *tmap, t_player *player, int y, int x)
     check_border(tmap, player, y, x -1);
   if (tmap->tmap[y][x + 1] != '#' && tmap->tmap[y][x + 1] != '1')
     check_border(tmap, player, y, x + 1);
-}
-
-void	init_ginfo(t_game *ginfo)
-{
-  ginfo->push = 0;
-  ginfo->move = 0;
-  time(&ginfo->time);
 }
 
 void	check_player(t_tab *tmap, t_player *player)
