@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 23:09:20 2016 Bastien
-** Last update Mon Dec 19 12:49:58 2016 Bastien
+** Last update Sun Dec 18 12:09:21 2016 Bastien
 */
 
 #include <stdio.h>
@@ -49,6 +49,27 @@ int	check_around(char **tab, int y, int x)
   return (i);
 }
 
+void	check_box(t_tab *tmap, t_player *player, int nb)
+{
+  int	i;
+  int	j;
+  int	k;
+
+  i = -1;
+  k = 1;
+  while (tmap->tmap[++i] != NULL)
+    {
+      j = -1;
+      while (tmap->tmap[i][++j] != '\0')
+	if (tmap->tmap[i][j] == 'X')
+	  k = (check_around(tmap->tmap, i, j) == 0) ? 0 : k;
+    }
+  if (k == 1 && nb == 0)
+    free_and_err(tmap, player);
+  if (k == 1 && nb == 1)
+    defeat(tmap, player);
+}
+
 void	check_ascii(t_tab *tmap, t_player *player)
 {
   int	i;
@@ -70,4 +91,5 @@ void	check_arg(t_tab *tmap, t_player *player)
 {
   check_ascii(tmap, player);
   check_nbelem(tmap, player);
+  check_box(tmap, player, 0);
 }

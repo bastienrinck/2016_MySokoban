@@ -5,12 +5,21 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 13:51:25 2016 Bastien
-** Last update Mon Dec 19 12:49:38 2016 Bastien
+** Last update Sat Dec 17 18:22:26 2016 Bastien
 */
 
 #include <curses.h>
 #include <stdlib.h>
 #include "sokoban.h"
+
+void	defeat(t_tab *tmap, t_player *player)
+{
+      free(player);
+      free_t_tab(tmap);
+      clear();
+      endwin();
+      exit(1);
+}
 
 void	victory(t_tab *tmap, t_player *player)
 {
@@ -35,6 +44,7 @@ void	victory(t_tab *tmap, t_player *player)
 int	check_status(t_tab *tmap, t_player *player)
 {
   victory(tmap, player);
+  check_box(tmap, player, 1);
   return (0);
 }
 

@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 09:00:07 2016 Bastien
-** Last update Mon Dec 19 12:52:04 2016 Bastien
+** Last update Sun Dec 18 12:22:36 2016 Bastien
 */
 
 #ifndef MY_SOKOBAN_H_
@@ -39,6 +39,7 @@ void	put_map(char **, char *, int);
 t_tab	*str_to_t_tab(char *);
 void	free_t_tab(t_tab *);
 void	display(t_tab *, char **, t_winfo);
+void	defeat(t_tab *, t_player *);
 void	victory(t_tab *, t_player *);
 int	check_status(t_tab *, t_player *);
 void	check_hole(t_tab *, t_player *);
@@ -55,6 +56,7 @@ int	my_strlen(char *);
 void	free_t_tab(t_tab *);
 void	free_and_err(t_tab *, t_player *);
 void	my_putstr(char *);
+void	check_box(t_tab *, t_player *, int);
 int	check_around(char **, int, int);
 void	display(t_tab *, char **, t_winfo);
 void	usage();
