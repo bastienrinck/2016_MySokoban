@@ -5,12 +5,13 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Thu Dec 15 23:03:32 2016 Bastien
-** Last update Sun Dec 18 12:04:12 2016 Bastien
+** Last update Mon Dec 19 15:01:03 2016 Bastien
 */
 
 #include <stdlib.h>
 #include <stdio.h>
 #include <curses.h>
+#include <time.h>
 #include "sokoban.h"
 
 void	my_reset(char **dest, char **src, t_player *player)
@@ -54,10 +55,11 @@ void	usage()
   exit(0);
 }
 
-void	display(t_tab *tmap, char **tab, t_winfo winfo)
+void	display(t_tab *tmap, char **tab, t_winfo winfo, t_game *ginfo)
 {
-  int	i;
-  int	y;
+  int		i;
+  int		y;
+  long int	timing;
 
   if (tmap->width > winfo.x * 2 + tmap->width / 2 ||
       tmap->height > winfo.y * 2 + tmap->height / 2)
@@ -72,6 +74,9 @@ void	display(t_tab *tmap, char **tab, t_winfo winfo)
       mvprintw(y, winfo.x, "%s", tab[i]);
       y++;
     }
+  time(&timing);
+  mvprintw(0, 0, "move : %i\tpushs : %i\ttime : %d",
+	   ginfo->move, ginfo->push, timing - ginfo->time);
 }
 
 void	isamap(char c)

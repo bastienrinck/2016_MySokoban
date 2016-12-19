@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 09:00:07 2016 Bastien
-** Last update Sun Dec 18 12:22:36 2016 Bastien
+** Last update Mon Dec 19 14:56:54 2016 Bastien
 */
 
 #ifndef MY_SOKOBAN_H_
@@ -31,6 +31,13 @@ typedef struct	s_winfo
   int	x;
 }t_winfo;
 
+typedef struct	s_game
+{
+  int		push;
+  int		move;
+  long int	time;
+}t_game;
+
 char	*my_memset(int, int);
 int	get_size(char *);
 char	**malloc_fct(int, int, char **);
@@ -38,16 +45,16 @@ char	**malloc_tmap(t_tab *, char **, char *);
 void	put_map(char **, char *, int);
 t_tab	*str_to_t_tab(char *);
 void	free_t_tab(t_tab *);
-void	display(t_tab *, char **, t_winfo);
+void	display(t_tab *, char **, t_winfo, t_game *);
 void	defeat(t_tab *, t_player *);
 void	victory(t_tab *, t_player *);
 int	check_status(t_tab *, t_player *);
 void	check_hole(t_tab *, t_player *);
 void	move_p(char **, t_player *, int, int);
-void	move_up(t_tab *, char **, t_player *);
-void	move_down(t_tab *, char **, t_player *);
-void	move_left(t_tab *, char **, t_player *);
-void	move_right(t_tab *, char **, t_player *);
+void	move_up(t_tab *, char **, t_player *, t_game *);
+void	move_down(t_tab *, char **, t_player *, t_game *);
+void	move_left(t_tab *, char **, t_player *, t_game *);
+void	move_right(t_tab *, char **, t_player *, t_game *);
 void	find_player(char **, t_player *);
 void	my_reset(char **, char **, t_player *);
 void	check_nbelem(t_tab *, t_player *);
@@ -58,8 +65,8 @@ void	free_and_err(t_tab *, t_player *);
 void	my_putstr(char *);
 void	check_box(t_tab *, t_player *, int);
 int	check_around(char **, int, int);
-void	display(t_tab *, char **, t_winfo);
 void	usage();
 void	isamap(char);
+void	init_ginfo(t_game *);
 
 #endif /* !MY_SOKOBAN_H_ */

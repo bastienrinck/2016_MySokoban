@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Mon Dec 12 10:10:22 2016 Bastien
-** Last update Fri Dec 16 17:14:18 2016 Bastien
+** Last update Mon Dec 19 15:31:23 2016 Bastien
 */
 
 #include <stdio.h>
@@ -51,10 +51,11 @@ void	init_ncurses()
   initscr();
   noecho();
   curs_set(0);
+  timeout(200);
   keypad(stdscr, TRUE);
 }
 
-void		sokoban(t_tab *tmap, t_player *player)
+void		sokoban(t_tab *tmap, t_player *player, t_game *ginfo)
 {
   int		ch;
   t_winfo	winfo;
@@ -63,18 +64,21 @@ void		sokoban(t_tab *tmap, t_player *player)
   while (check_status(tmap, player) == 0)
     {
       get_winfo(tmap, &winfo);
-      display(tmap, tmap->tmap, winfo);
+      display(tmap, tmap->tmap, winfo, ginfo);
       ch = getch();
       if (ch == ' ')
-	my_reset(tmap->tmap, tmap->save, player);
+	{
+	  my_reset(tmap->tmap, tmap->save, player);
+	  init_ginfo(ginfo);
+	}
       else if (ch == KEY_UP)
-	move_up(tmap, tmap->tmap, player);
+	move_up(tmap, tmap->tmap, player, ginfo);
       else if (ch == KEY_DOWN)
-	move_down(tmap, tmap->tmap, player);
+	move_down(tmap, tmap->tmap, player, ginfo);
       else if (ch == KEY_LEFT)
-	move_left(tmap, tmap->tmap, player);
+	move_left(tmap, tmap->tmap, player, ginfo);
       else if (ch == KEY_RIGHT)
-	move_right(tmap, tmap->tmap, player);
+	move_right(tmap, tmap->tmap, player, ginfo);
       clear();
     }
 }
@@ -86,6 +90,7 @@ int		main(int ac, char **av)
   t_player	*player;
   int		fd;
   char		c;
+  t_game	ginfo;
 
   c = '0';
   if (ac != 2)
@@ -101,6 +106,7 @@ int		main(int ac, char **av)
   tmap = str_to_t_tab(av[1]);
   find_player(tmap->tmap, player);
   check_arg(tmap, player);
-  sokoban(tmap, player);
+  init_ginfo(&ginfo);
+  sokoban(tmap, player, &ginfo);
   return (0);
 }

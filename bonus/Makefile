@@ -5,7 +5,7 @@
 ## Login   <rectoria@epitech.net>
 ## 
 ## Started on  Fri Dec 16 01:16:08 2016 Bastien
-## Last update Fri Dec 16 01:21:59 2016 Bastien
+## Last update Mon Dec 19 13:51:12 2016 Bastien
 ##
 
 CC	=	gcc
@@ -21,7 +21,8 @@ SRCS	=	fct_check.c \
 		fct_move.c \
 		fct_random.c \
 		my_sokoban.c \
-		str_to_tab.c
+		str_to_tab.c \
+		fct_game.c
 
 OBJS	=	$(SRCS:.c=.o)
 
