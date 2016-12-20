@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Thu Dec 15 23:03:32 2016 Bastien
-** Last update Mon Dec 19 16:43:58 2016 Bastien
+** Last update Tue Dec 20 17:31:33 2016 Bastien
 */
 
 #include <stdlib.h>
@@ -55,12 +55,15 @@ void	usage()
   exit(0);
 }
 
-void	display(t_tab *tmap, char **tab, t_winfo winfo, t_game *ginfo)
+void	display(t_tab *tmap, char **tab, t_game *ginfo)
 {
   int		i;
   int		y;
   long int	timing;
+  t_winfo	winfo;
 
+  get_winfo(tmap, &winfo);
+  clear();
   if (tmap->width > winfo.x * 2 + tmap->width / 2 ||
       tmap->height > winfo.y * 2 + tmap->height / 2)
     {

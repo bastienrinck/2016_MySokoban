@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Mon Dec 12 10:10:22 2016 Bastien
-** Last update Mon Dec 19 18:28:46 2016 Bastien
+** Last update Tue Dec 20 17:33:47 2016 Bastien
 */
 
 #include <stdio.h>
@@ -58,13 +58,12 @@ void	init_ncurses()
 void		sokoban(t_tab *tmap, t_player *player, t_game *ginfo)
 {
   int		ch;
-  t_winfo	winfo;
 
   init_ncurses();
+  menu1(tmap, player, ginfo);
   while (check_status(tmap, player) == 0)
     {
-      get_winfo(tmap, &winfo);
-      display(tmap, tmap->tmap, winfo, ginfo);
+      display(tmap, tmap->tmap, ginfo);
       ch = getch();
       if (ch == ' ')
 	{
@@ -79,7 +78,8 @@ void		sokoban(t_tab *tmap, t_player *player, t_game *ginfo)
 	move_left(tmap, tmap->tmap, player, ginfo);
       else if (ch == KEY_RIGHT)
 	move_right(tmap, tmap->tmap, player, ginfo);
-      clear();
+      else if (ch == 'p')
+	menu2(tmap, player, ginfo);
     }
 }
 

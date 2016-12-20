@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 09:00:07 2016 Bastien
-** Last update Mon Dec 19 18:21:12 2016 Bastien
+** Last update Tue Dec 20 17:40:36 2016 Bastien
 */
 
 #ifndef MY_SOKOBAN_H_
@@ -45,7 +45,7 @@ char	**malloc_tmap(t_tab *, char **, char *);
 void	put_map(char **, char *, int);
 t_tab	*str_to_t_tab(char *);
 void	free_t_tab(t_tab *);
-void	display(t_tab *, char **, t_winfo, t_game *);
+void	display(t_tab *, char **, t_game *);
 void	defeat(t_tab *, t_player *);
 void	victory(t_tab *, t_player *);
 int	check_status(t_tab *, t_player *);
@@ -62,6 +62,7 @@ void	check_arg(t_tab *, t_player *);
 int	my_strlen(char *);
 void	free_t_tab(t_tab *);
 void	free_and_err(t_tab *, t_player *);
+void	free_and_ex(t_tab *, t_player *);
 void	my_putstr(char *);
 void	check_box(t_tab *, t_player *, int);
 int	check_around(char **, int, int);
@@ -70,5 +71,12 @@ void	isamap(char);
 void	init_ginfo(t_game *);
 void	check_border(t_tab *, t_player *, int, int);
 void	check_player(t_tab *, t_player *);
+void	logo();
+void	disp_menu2(int);
+void	disp_menu1(int);
+void	menu1(t_tab *, t_player *, t_game *);
+void	menu2(t_tab *, t_player *, t_game *);
+void	get_winfo(t_tab *, t_winfo *);
+void	menu2_space(t_tab *, t_player *, int, t_game *);
 
 #endif /* !MY_SOKOBAN_H_ */

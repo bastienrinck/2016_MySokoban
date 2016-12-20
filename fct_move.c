@@ -5,7 +5,7 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Wed Dec 14 13:19:37 2016 Bastien
-** Last update Mon Dec 19 15:44:41 2016 Bastien
+** Last update Tue Dec 20 17:13:29 2016 Bastien
 */
 
 #include "sokoban.h"
@@ -56,8 +56,8 @@ void	move_left(t_tab *tab, char **tmap, t_player *player)
 {
   if (tmap[player->y][player->x - 1] == '#')
     return ;
- else if (tmap[player->y][player->x - 1] == 'X' && tmap[player->y]
-	  [player->x - 2] != '#' && tmap[player->y][player->x - 2] != 'X')
+  else if (tmap[player->y][player->x - 1] == 'X' && tmap[player->y]
+	   [player->x - 2] != '#' && tmap[player->y][player->x - 2] != 'X')
     {
       tmap[player->y][player->x - 2] = 'X';
       tmap[player->y][player->x - 1] = 'P';

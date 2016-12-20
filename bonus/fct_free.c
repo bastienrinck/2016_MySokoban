@@ -5,11 +5,12 @@
 ** Login   <rectoria@epitech.net>
 ** 
 ** Started on  Thu Dec 15 13:24:12 2016 Bastien
-** Last update Sun Dec 18 12:09:54 2016 Bastien
+** Last update Tue Dec 20 16:59:49 2016 Bastien
 */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <curses.h>
 #include "sokoban.h"
 
 void	free_t_tab(t_tab *tab)
@@ -32,4 +33,13 @@ void	free_and_err(t_tab *tmap, t_player *player)
   free(player);
   free_t_tab(tmap);
   exit(84);
+}
+
+void	free_and_ex(t_tab *tmap, t_player *player)
+{
+  free(player);
+  free_t_tab(tmap);
+  clear();
+  endwin();
+  exit(0);
 }
