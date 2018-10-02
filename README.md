@@ -26,7 +26,7 @@ Sokoban game under terminal.
 
 ![Menu](https://imgur.com/WG55r31.png)
 
-![InGame](https://imgur.com/lzHsmVv.png)
+![InGame](https://imgur.com/q4HH2eF.png)
 
 ## Author
 * Bastien Rinck
