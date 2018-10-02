@@ -24,9 +24,9 @@ Sokoban game under terminal.
  O: Target holes
 ```
 
-![Menu](https://imgur.com/WG55r31)
+![Menu](https://imgur.com/WG55r31.png)
 
-![InGame](https://imgur.com/a/57yBfWP)
+![InGame](https://imgur.com/a/57yBfWP.png)
 
 ## Author
 * Bastien Rinck
